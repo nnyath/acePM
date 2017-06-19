@@ -43,7 +43,7 @@ $ export FLASK_DEBUG=1
 
 _Start Flask dev server (localhost:5000)_
 ```
-$ flask run
+$ flask run --host=0.0.0.0
 ```
 
 ---

@@ -1,3 +1,4 @@
 /srv/venv
 /client/node_modules
+/srv/uploads/**/*.*
 *.pyc

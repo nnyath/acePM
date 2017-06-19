@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1497830262008" clover="3.2.0">
+  <project timestamp="1497830262009" name="All files">
+    <metrics statements="58" coveredstatements="31" conditionals="18" coveredconditionals="5" methods="18" coveredmethods="11" elements="94" coveredelements="47" complexity="0" loc="58" ncloc="58" packages="2" files="3" classes="3">
+      <package name="client">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <file name="index.android.js" path="/home/dev/sync/dev/personal/py/acePM/client/index.android.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
+          <line num="52" count="1" type="stmt"/>
+        </file>
+        <file name="index.ios.js" path="/home/dev/sync/dev/personal/py/acePM/client/index.ios.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="client.components.record">
+        <metrics statements="50" coveredstatements="23" conditionals="18" coveredconditionals="5" methods="13" coveredmethods="8"/>
+        <file name="record.js" path="/home/dev/sync/dev/personal/py/acePM/client/components/record/record.js">
+          <metrics statements="50" coveredstatements="23" conditionals="18" coveredconditionals="5" methods="13" coveredmethods="8"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="34" count="2" type="stmt"/>
+          <line num="35" count="2" type="stmt"/>
+          <line num="36" count="2" type="stmt"/>
+          <line num="37" count="2" type="stmt"/>
+          <line num="38" count="2" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
+          <line num="44" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="45" count="1" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="72" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="73" count="1" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="80" count="0" type="stmt"/>
+          <line num="82" count="0" type="stmt"/>
+          <line num="83" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="88" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="93" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="94" count="1" type="stmt"/>
+          <line num="95" count="1" type="stmt"/>
+          <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="99" count="0" type="stmt"/>
+          <line num="101" count="0" type="stmt"/>
+          <line num="103" count="0" type="stmt"/>
+          <line num="104" count="0" type="stmt"/>
+          <line num="107" count="0" type="stmt"/>
+          <line num="112" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="113" count="1" type="stmt"/>
+          <line num="114" count="1" type="stmt"/>
+          <line num="117" count="0" type="stmt"/>
+          <line num="119" count="0" type="stmt"/>
+          <line num="120" count="0" type="stmt"/>
+          <line num="122" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="123" count="0" type="stmt"/>
+          <line num="125" count="0" type="stmt"/>
+          <line num="128" count="0" type="stmt"/>
+          <line num="133" count="0" type="stmt"/>
+          <line num="137" count="3" type="stmt"/>
+          <line num="152" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

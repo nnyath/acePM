@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing RecordButton component renders as expected 1`] = `
+<View>
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Start Recording"
+  />
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Stop Recording"
+  />
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Output State"
+  />
+</View>
+`;
+
+exports[`renders correctly 1`] = `
+<View>
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Start Recording"
+  />
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Stop Recording"
+  />
+  <Button
+    accessibilityLabel="Start Recording DDR ACE"
+    color="#841584"
+    onPress={[Function]}
+    title="Output State"
+  />
+</View>
+`;

@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import {
+    Text,
     Button,
     View,
     Platform,
     PermissionsAndroid
 } from 'react-native';
+
+import base64js from 'base64-js'
+import FS from 'react-native-fs'
+import Axios from 'axios'
 
 import update from 'immutability-helper'
 import { AudioRecorder, AudioUtils } from 'react-native-audio'
@@ -22,6 +27,7 @@ class Record extends Component {
                 AudioEncoding: "aac",
                 AudioEncodingBitRate: 32000
             },
+            uploadURI:'http://192.168.1.31:5001/upload',
             permissions: {
                 mic: null
             },
@@ -36,6 +42,7 @@ class Record extends Component {
         this._record = this._record.bind(this)
         this._stop = this._stop.bind(this)
         this._finishRecording = this._finishRecording.bind(this)
+        this._upload = this._upload.bind(this)
 
     }
 
@@ -129,31 +136,43 @@ class Record extends Component {
         }
     }
 
+
+    async _upload() {
+        console.log('Uploading File')
+
+        let file = {
+            uri:'file://'+this.state.audioPath,
+            type:'audio/aac',
+            name:'test2.aac'
+        }
+        let body = new FormData()
+        body.append('file',file)
+        
+        Axios.post(this.state.uploadURI,body)
+    }
+
     _finishRecording(succeed, filePath) {
-        console.log(`Finished recording : Duration - ${this.state.currentTime}s at ${filePath}`)
+        console.log(`Finished recording : Duration - ${this.state.status.currentTime}s at ${filePath}`)
     }
 
     render() {
+
+        const { status } = this.state
+
         return (
             <View>
                 <Button
-                    onPress={this._record}
-                    title="Start Recording"
+                    onPress={!status.recording ? this._record : this._stop}
+                    title={!status.recording ? 'Start Recording' : 'Stop Recording'}
                     color="#841584"
                     accessibilityLabel="Start Recording DDR ACE"
                 />
-                <Button
-                    onPress={this._stop}
-                    title="Stop Recording"
-                    color="#841584"
-                    accessibilityLabel="Start Recording DDR ACE"
-                />
-                <Button
-                    onPress={() => { console.log(this.state) }}
-                    title="Output State"
-                    color="#841584"
-                    accessibilityLabel="Start Recording DDR ACE"
-                />
+                <Text>{status.currentTime}s recorded</Text>
+                {
+                    (!status.recording && status.currentTime !== 0)
+                        ? (<Button onPress={this._upload} title='Upload to Server' />)
+                        : null
+                }
             </View>
         )
     }
