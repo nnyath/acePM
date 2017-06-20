@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import {
     Text,
+    TextInput,
+    ToastAndroid,
     Button,
     View,
     Platform,
     PermissionsAndroid
 } from 'react-native';
 
-import base64js from 'base64-js'
+import Config from '../../config'
 import FS from 'react-native-fs'
 import Axios from 'axios'
 
@@ -19,15 +21,11 @@ class Record extends Component {
     constructor() {
         super()
         this.state = {
-            audioPath: AudioUtils.DocumentDirectoryPath + '/test2.aac',
-            audioProfile: {
-                SampleRate: 22050,
-                Channels: 1,
-                AudioQuality: "Low",
-                AudioEncoding: "aac",
-                AudioEncodingBitRate: 32000
-            },
-            uploadURI:'http://192.168.1.31:5001/upload',
+            audioPath: null,
+            audioTag: null,
+            audioProfile: Config.audioProfile,
+            //ToDo: Abstract to function generating valid URI
+            uploadURI:`${Config.server.host}:${Config.server.port}/upload`,
             permissions: {
                 mic: null
             },
@@ -60,8 +58,7 @@ class Record extends Component {
 
             AudioRecorder.onFinished = (data) => {
                 if (Platform.OS === 'ios')
-                    return
-                //_finishRecording()
+                    _finishRecording()
             }
         })
     }
@@ -72,7 +69,6 @@ class Record extends Component {
         } catch (err) {
             console.error(err)
         }
-
     }
 
     _checkPermissions() {
@@ -102,10 +98,17 @@ class Record extends Component {
             return
         }
 
-        if (!this.state.status.recording)
-            this.prepareRecordingPath(this.state.audioPath)
+        await this.setState({
+            audioPath: update(this.state.audioPath, { $set: `${AudioUtils.DocumentDirectoryPath}/${new Date().getTime()}.${this.state.audioProfile.AudioEncoding}` })
+        })
 
-        this.setState({ status: update(this.state.status, { recording: { $set: true } }) })
+
+        if (!this.state.status.recording){
+            this.prepareRecordingPath(this.state.audioPath)
+            await this.setState({ 
+                status: update(this.state.status, { recording: { $set: true } }),
+            })
+        }
 
         try {
             const filePath = await AudioRecorder.startRecording()
@@ -140,15 +143,28 @@ class Record extends Component {
     async _upload() {
         console.log('Uploading File')
 
+        if(!this.state.audioPath){
+            console.error('Cannot find audio recording')
+            return
+        }
+            
+
         let file = {
             uri:'file://'+this.state.audioPath,
             type:'audio/aac',
-            name:'test2.aac'
+            name:this.state.audioPath.split('/').slice(-1)[0]
         }
+
         let body = new FormData()
-        body.append('file',file)
-        
-        Axios.post(this.state.uploadURI,body)
+        body.append('file', file)
+        //ToDo: Validate Tag isn't emtpy and valid folder struc name
+        body.append('tag', this.state.audioTag)
+
+        let call = await Axios.post(this.state.uploadURI,body)
+        if(Platform.OS==='android')
+            call.status===200 
+                ? ToastAndroid.show('Sucessfully Uploaded '+this.state.audioTag, ToastAndroid.SHORT) 
+                : ToastAndroid.show('Unsucessfully Uploaded '+this.state.audioTag, ToastAndroid.SHORT)
     }
 
     _finishRecording(succeed, filePath) {
@@ -165,12 +181,22 @@ class Record extends Component {
                     onPress={!status.recording ? this._record : this._stop}
                     title={!status.recording ? 'Start Recording' : 'Stop Recording'}
                     color="#841584"
-                    accessibilityLabel="Start Recording DDR ACE"
+                    accessibilityLabel="Start Recording"
                 />
                 <Text>{status.currentTime}s recorded</Text>
                 {
                     (!status.recording && status.currentTime !== 0)
-                        ? (<Button onPress={this._upload} title='Upload to Server' />)
+                        ? (
+                            <View>
+                                <Button 
+                                    onPress={this._upload} title='Upload to Server' 
+                                />
+                                <TextInput 
+                                    onChangeText={text => this.setState({audioTag:text})}
+                                    placeholder='Enter a tag'
+                                />
+                            </View>
+                        )
                         : null
                 }
             </View>
