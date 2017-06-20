@@ -44,7 +44,10 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #ToDo: Ensure valid folder creation
+            if not os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'],request.form.get('tag'))):
+                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'],request.form.get('tag')))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], request.form.get('tag'), filename))
 
     return '''
     <!doctype html>
