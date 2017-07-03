@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-} from 'react-native';
+import React, { Component } from 'react'
+import { AppRegistry } from 'react-native'
+import { Provider } from 'react-redux'
 
-import Splash from'./views/Splash/Splash'
+import store from './js/store/store'
+import Splash from'./js/views/Splash/Splash'
+import Main from './js/views/Main/Main'
 
 export default class acePMClient extends Component {
 
   constructor() {
     super()
-    this.state = {
-    }
+    this.state = {}
   }
 
   render() {
     return (
-      <Splash/>
-    );
+      <Provider store={store}>
+        <Main/>
+      </Provider>
+    )
   }
+
 }
 
 AppRegistry.registerComponent('acePMClient', () => acePMClient);

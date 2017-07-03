@@ -16,16 +16,10 @@ export default StyleSheet.create({
         textAlign: 'center',
         margin: 10,
     },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
     logo : {
         flex:1,
         width:null,
         height:null,
         resizeMode : 'center',
-        opacity: 1
     }
 })
