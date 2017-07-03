@@ -3,8 +3,7 @@ import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
 
 import store from './js/store/store'
-import Splash from'./js/views/Splash/Splash'
-import Main from './js/views/Main/Main'
+import Main from './js/containers/Main/Main'
 
 export default class acePMClient extends Component {
 

@@ -147,6 +147,7 @@ ShallowWrapper {
         "init": false,
       },
       "refs": Object {},
+      "simulateLoading": [Function],
       "startEllipses": [Function],
       "state": Object {
         "ellipses": Object {

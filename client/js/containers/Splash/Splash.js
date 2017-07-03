@@ -11,6 +11,7 @@ import update from 'immutability-helper'
 import styles from './styles'
 import {_wait} from '../../util/tests/testutil'
 import {initLoad} from './actions'
+import consts from '../../util/consts'
 
 @connect(store => {
   return {
@@ -30,25 +31,33 @@ export default class Splash extends Component {
       }
     }
 
-    // this.dispatch = this.props.dispatch.bind(this)
-
     this.startEllipses = this.startEllipses.bind(this)
     this.stopEllipses = this.stopEllipses.bind(this)
+
+    this.simulateLoading = this.simulateLoading.bind(this)
   }
 
-  async componentDidMount(){
+  componentDidMount(){
+      this.simulateLoading(3)
+  }
+
+  async simulateLoading(displayCount){
+    /* Pure recursive helper function to wait and iterate through loading messages*/
+    iterateMsg = async (msgs, count) => {
+      if(count<=0)
+        return
+
+      await _wait(5000)
+      const randInd = Math.floor(Math.random()*msgs.length)
+      await this.setState(update(this.state, {info:{$set:msgs[randInd]}}))
+      await iterateMsg(update(msgs,{$splice:[[randInd,1]]}),count-1)
+    }
     
     this.startEllipses()
-    await _wait(5000)
-    await this.setState(update(this.state, {info:{$set:'Connecting to Server'}}))
-    await _wait(5000)
-    await this.setState(update(this.state, {info:{$set:'Calibrating 16th Notes'}}))
-    await _wait(5000)
-    await this.setState(update(this.state, {info:{$set:'Mapping Crossovers'}}))
-    await _wait(5000)
+    await iterateMsg(consts.UI.LOADING_MESSAGES,displayCount)
     this.stopEllipses()
-    this.props.dispatch(initLoad())
     
+    this.props.dispatch(initLoad())
   }
 
   startEllipses(){

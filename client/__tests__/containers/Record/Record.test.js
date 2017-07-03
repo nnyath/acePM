@@ -2,16 +2,16 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import update from 'immutability-helper'
 import Sinon from 'sinon'
-import {_setState,_state,_wait} from '../../js/util/tests/testutil'
-import consts from '../../js/util/consts'
+import {_setState,_state,_wait} from '../../../js/util/tests/testutil'
+import consts from '../../../js/util/consts'
 
-import mockRNFB from '../../js/util/tests/mocks/RNFB'
-import mockAudio from '../../js/util/tests/mocks/Audio'
+import mockRNFB from '../../../js/util/tests/mocks/RNFB'
+import mockAudio from '../../../js/util/tests/mocks/Audio'
 jest.mock('react-native-audio', () => mockAudio)
 jest.mock('react-native-fetch-blob', ()=>mockRNFB)
 
 import {AudioRecorder} from 'react-native-audio'
-import Record from '../../js/components/record/record'
+import Record from '../../../js/containers/Record/Record'
 
 
 

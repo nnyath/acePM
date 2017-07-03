@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styles from './styles'
 import {_wait} from '../../util/tests/testutil'
 import Splash from '../Splash/Splash'
-import Record from '../../components/record/record'
+import Record from '../Record/Record'
 
 @connect(store => {
   return {

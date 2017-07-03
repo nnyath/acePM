@@ -5,10 +5,10 @@ import Sinon from 'sinon'
 
 import configureStore from 'redux-mock-store'
 
-import {_setState,_state,_wait} from '../../js/util/tests/testutil'
-import consts from '../../js/util/consts'
+import {_setState,_state,_wait} from '../../../js/util/tests/testutil'
+import consts from '../../../js/util/consts'
 
-import Splash from '../../js/views/Splash/Splash'
+import Splash from '../../../js/containers/Splash/Splash'
 
 
 describe('init', ()=>{

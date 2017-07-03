@@ -1,11 +1,11 @@
 import 'react-native'
 import React from 'react'
 
-import mockAudio from '../js/util/tests/mocks/Audio'
-import mockRNFB from '../js/util/tests/mocks/RNFB'
+import mockAudio from '../../js/util/tests/mocks/Audio'
+import mockRNFB from '../../js/util/tests/mocks/RNFB'
 jest.mock('react-native-audio', () => mockAudio)
 jest.mock('react-native-fetch-blob', () => mockRNFB)
-import Index from '../index.android.js'
+import Index from '../../index.android.js'
 
 import renderer from 'react-test-renderer'
 
