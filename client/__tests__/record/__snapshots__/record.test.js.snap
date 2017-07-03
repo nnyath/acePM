@@ -77,7 +77,7 @@ ShallowWrapper {
           "currentTime": 0,
           "recording": null,
         },
-        "uploadURI": "http://bento.nnyath.io:5001/upload",
+        "uploadURI": ":5001/upload",
       },
       "updater": Updater {
         "_renderer": [Circular],

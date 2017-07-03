@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`init renders correctly 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <View
+    style={
+        Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "center",
+          }
+    }
+>
+    <View
+        style={
+            Object {
+                "height": 300,
+                "width": 300,
+              }
+        }
+    >
+        <Image
+            source={1}
+            style={
+                Object {
+                    "flex": 1,
+                    "height": null,
+                    "resizeMode": "center",
+                    "width": null,
+                  }
+            }
+        />
+        <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+                Object {
+                    "fontSize": 20,
+                    "margin": 10,
+                    "textAlign": "center",
+                  }
+            }
+        >
+            Loading
+            
+        </Text>
+    </View>
+</View>,
+  "nodes": Array [
+    <View
+      style={
+            Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                }
+      }
+>
+      <View
+            style={
+                  Object {
+                        "height": 300,
+                        "width": 300,
+                      }
+            }
+      >
+            <Image
+                  source={1}
+                  style={
+                        Object {
+                              "flex": 1,
+                              "height": null,
+                              "resizeMode": "center",
+                              "width": null,
+                            }
+                  }
+            />
+            <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  disabled={false}
+                  ellipsizeMode="tail"
+                  style={
+                        Object {
+                              "fontSize": 20,
+                              "margin": 10,
+                              "textAlign": "center",
+                            }
+                  }
+            >
+                  Loading
+                  
+            </Text>
+      </View>
+</View>,
+  ],
+  "options": Object {
+    "context": Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+    },
+  },
+  "renderer": ReactShallowRenderer {
+    "_context": Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+    },
+    "_element": <Splash
+      dispatch={[Function]}
+      init={false}
+/>,
+    "_instance": Splash {
+      "context": Object {
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+      },
+      "props": Object {
+        "dispatch": [Function],
+        "init": false,
+      },
+      "refs": Object {},
+      "startEllipses": [Function],
+      "state": Object {
+        "ellipses": Object {
+          "display": "",
+          "handler": null,
+          "rate": 500,
+        },
+        "info": "Loading",
+      },
+      "stopEllipses": [Function],
+      "updater": Updater {
+        "_renderer": [Circular],
+      },
+    },
+    "_newState": null,
+    "_rendered": <View
+      style={
+            Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                }
+      }
+>
+      <View
+            style={
+                  Object {
+                        "height": 300,
+                        "width": 300,
+                      }
+            }
+      >
+            <Image
+                  source={1}
+                  style={
+                        Object {
+                              "flex": 1,
+                              "height": null,
+                              "resizeMode": "center",
+                              "width": null,
+                            }
+                  }
+            />
+            <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  disabled={false}
+                  ellipsizeMode="tail"
+                  style={
+                        Object {
+                              "fontSize": 20,
+                              "margin": 10,
+                              "textAlign": "center",
+                            }
+                  }
+            >
+                  Loading
+                  
+            </Text>
+      </View>
+</View>,
+    "_rendering": false,
+    "_updater": Updater {
+      "_renderer": [Circular],
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Splash
+    dispatch={[Function]}
+    init={false}
+/>,
+}
+`;

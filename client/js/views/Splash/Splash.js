@@ -30,11 +30,14 @@ export default class Splash extends Component {
       }
     }
 
+    // this.dispatch = this.props.dispatch.bind(this)
+
     this.startEllipses = this.startEllipses.bind(this)
     this.stopEllipses = this.stopEllipses.bind(this)
   }
 
   async componentDidMount(){
+    
     this.startEllipses()
     await _wait(5000)
     await this.setState(update(this.state, {info:{$set:'Connecting to Server'}}))
