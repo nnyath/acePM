@@ -5,11 +5,18 @@ import {
   Button,
   Image
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import update from 'immutability-helper'
 import styles from './styles'
 import {_wait} from '../../util/tests/testutil'
+import {initLoad} from './actions'
 
+@connect(store => {
+  return {
+    init : store.main.init
+  }
+})
 export default class Splash extends Component {
 
   constructor() {
@@ -22,6 +29,7 @@ export default class Splash extends Component {
         display: ''
       }
     }
+
     this.startEllipses = this.startEllipses.bind(this)
     this.stopEllipses = this.stopEllipses.bind(this)
   }
@@ -34,8 +42,9 @@ export default class Splash extends Component {
     await this.setState(update(this.state, {info:{$set:'Calibrating 16th Notes'}}))
     await _wait(5000)
     await this.setState(update(this.state, {info:{$set:'Mapping Crossovers'}}))
-    await _wait(20000)
+    await _wait(5000)
     this.stopEllipses()
+    this.props.dispatch(initLoad())
     
   }
 
@@ -60,8 +69,7 @@ export default class Splash extends Component {
       <View style={styles.container}>
         <View style={styles.img}>
           <Image style={styles.logo}
-            source={require('../../media/img/acePM_redux.png')}
-          >
+            source={require('../../../media/img/acePM_redux.png')}>
           </Image>
           <Text style={styles.info}>{info}{ellipses.display}</Text>
         </View>

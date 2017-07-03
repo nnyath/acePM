@@ -1,3 +1,5 @@
+/* TODO : REFACTOR AND RENAME TO PROPER views/component folder also capitalize */
+
 import React, { Component } from 'react';
 import {
     Text,
