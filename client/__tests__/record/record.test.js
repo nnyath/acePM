@@ -2,11 +2,11 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import update from 'immutability-helper'
 import Sinon from 'sinon'
-import {_setState,_state,_wait} from '../../util/testutil'
+import {_setState,_state,_wait} from '../../util/tests/testutil'
 import consts from '../../util/consts'
 
-import mockRNFB from '../../__mocks__/RNFB'
-import mockAudio from '../../__mocks__/Audio'
+import mockRNFB from '../../util/tests/mocks/RNFB'
+import mockAudio from '../../util/tests/mocks/Audio'
 jest.mock('react-native-audio', () => mockAudio)
 jest.mock('react-native-fetch-blob', ()=>mockRNFB)
 
