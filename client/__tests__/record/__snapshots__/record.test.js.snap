@@ -1,47 +1,115 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing RecordButton component renders as expected 1`] = `
-<View>
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Start Recording"
-  />
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Stop Recording"
-  />
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Output State"
-  />
-</View>
-`;
-
 exports[`renders correctly 1`] = `
-<View>
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Start Recording"
-  />
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Stop Recording"
-  />
-  <Button
-    accessibilityLabel="Start Recording DDR ACE"
-    color="#841584"
-    onPress={[Function]}
-    title="Output State"
-  />
-</View>
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <View>
+    <Button
+        accessibilityLabel="Start Recording"
+        color="#841584"
+        id="recordButton"
+        onPress={[Function]}
+        title="Start Recording"
+    />
+    <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+    >
+        0
+        s recorded
+    </Text>
+</View>,
+  "nodes": Array [
+    <View>
+      <Button
+            accessibilityLabel="Start Recording"
+            color="#841584"
+            id="recordButton"
+            onPress={[Function]}
+            title="Start Recording"
+      />
+      <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+      >
+            0
+            s recorded
+      </Text>
+</View>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_context": Object {},
+    "_element": <Record />,
+    "_instance": Record {
+      "_checkPermissions": [Function],
+      "_finishRecording": [Function],
+      "_record": [Function],
+      "_stop": [Function],
+      "_upload": [Function],
+      "context": Object {},
+      "prepareRecordingPath": [Function],
+      "props": Object {},
+      "refs": Object {},
+      "state": Object {
+        "audioPath": null,
+        "audioProfile": Object {
+          "AudioEncoding": "aac",
+          "AudioEncodingBitRate": 32000,
+          "AudioQuality": "Low",
+          "Channels": 1,
+          "SampleRate": 22050,
+        },
+        "audioTag": null,
+        "permissions": Object {
+          "mic": null,
+        },
+        "status": Object {
+          "currentTime": 0,
+          "recording": null,
+        },
+        "uploadURI": "http://bento.nnyath.io:5001/upload",
+      },
+      "updater": Updater {
+        "_renderer": [Circular],
+      },
+    },
+    "_newState": null,
+    "_rendered": <View>
+      <Button
+            accessibilityLabel="Start Recording"
+            color="#841584"
+            id="recordButton"
+            onPress={[Function]}
+            title="Start Recording"
+      />
+      <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+      >
+            0
+            s recorded
+      </Text>
+</View>,
+    "_rendering": false,
+    "_updater": Updater {
+      "_renderer": [Circular],
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Record />,
+}
 `;

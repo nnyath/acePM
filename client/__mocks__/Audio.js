@@ -1,6 +1,8 @@
-let AudioRecorder = {
-    startRecording: jest.fn()
+const AudioRecorder = {
+    startRecording: ()=>{},
+    prepareRecordingAtPath : ()=>{},
+    checkAuthorizationStatus: ()=>{}
 }
-let AudioUtils = {}
+const AudioUtils = {}
 
 module.exports = {AudioRecorder, AudioUtils} 
