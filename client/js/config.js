@@ -1,6 +1,6 @@
 export default {
     server : {
-        host : 'http://bento.nnyath.io',
+        host : '',
         port : 5001
     },
     audioProfile: {
