@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
   <View>
     <View
       accessibilityComponentType="button"
-      accessibilityLabel="Start Recording DDR ACE"
+      accessibilityLabel="Start Recording"
       accessibilityTraits={
         Array [
           "button",
@@ -84,120 +84,15 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Start Recording DDR ACE"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
+    <Text
       accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
     >
-      <View
-        style={
-          Array [
-            Object {},
-          ]
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "#0C42FD",
-                "fontSize": 18,
-                "padding": 8,
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#841584",
-              },
-            ]
-          }
-        >
-          Stop Recording
-        </Text>
-      </View>
-    </View>
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Start Recording DDR ACE"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
-        style={
-          Array [
-            Object {},
-          ]
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "#0C42FD",
-                "fontSize": 18,
-                "padding": 8,
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#841584",
-              },
-            ]
-          }
-        >
-          Output State
-        </Text>
-      </View>
-    </View>
+      0
+      s recorded
+    </Text>
   </View>
 </View>
 `;

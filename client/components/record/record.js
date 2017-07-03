@@ -8,9 +8,10 @@ import {
     Platform,
     PermissionsAndroid
 } from 'react-native';
+import consts from '../../util/consts'
 
 import Config from '../../config'
-import FS from 'react-native-fs'
+import RNFB from 'react-native-fetch-blob'
 import Axios from 'axios'
 
 import update from 'immutability-helper'
@@ -18,8 +19,8 @@ import { AudioRecorder, AudioUtils } from 'react-native-audio'
 
 class Record extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             audioPath: null,
             audioTag: null,
@@ -88,6 +89,7 @@ class Record extends Component {
     }
 
     async _record() {
+
         if (this.state.status.recording) {
             console.warn('Already recording')
             return
@@ -179,9 +181,10 @@ class Record extends Component {
             <View>
                 <Button
                     onPress={!status.recording ? this._record : this._stop}
-                    title={!status.recording ? 'Start Recording' : 'Stop Recording'}
+                    title={!status.recording ? consts.UI.RECORD_BUTTON.START : consts.UI.RECORD_BUTTON.STOP}
                     color="#841584"
                     accessibilityLabel="Start Recording"
+                    id={consts.UI.RECORD_BUTTON.ID}
                 />
                 <Text>{status.currentTime}s recorded</Text>
                 {
