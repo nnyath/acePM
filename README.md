@@ -1,4 +1,7 @@
 # acePM
+
+![coverage](./client/coverage/badge.png)
+
 acePM is a mobile application ([React Native](https://github.com/facebook/react-native)) intended to recognize songs from popular music rhythm games via audio fingerprinting ([DejaVu](https://github.com/worldveil/dejavu)) to display the song's bpm. Users can display a desired bpm and calculate the multipler required to achieve said bpm.
 
 The mobile client will attempt to sample the ambient music, send the sample to the hosted backend ([Flask](https://github.com/pallets/flask)) and attempt to recognize the song.
@@ -48,14 +51,16 @@ $ flask run --host=0.0.0.0
 
 ---
 ## Comments, Complaints, Questions
-Send a good ol' fashioned email to [kenny.inthirath@gmail.com](mailto:kenny.inthirath@gmail.com)
+Open an issue!
+
+<https://github.com/nnyath/acePM/issues/new>
 
 ---
 ## MIT License
 Copyright 2017 Kenny Inthirath
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<sub>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</sub>
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+<sub>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</sub>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+<sub>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</sub>
