@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for client/js/containers/Record/Record.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">client/js/containers/Record</a> Record.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.38% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.38% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.38% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* TODO : REFACTOR AND RENAME TO PROPER views/component folder also capitalize */
+&nbsp;
+import React, { Component } from 'react';
+import {
+    Text,
+    TextInput,
+    ToastAndroid,
+    Button,
+    View,
+    Platform,
+    PermissionsAndroid
+} from 'react-native';
+import consts from '../../util/consts'
+&nbsp;
+import Config from '../../config'
+import RNFB from 'react-native-fetch-blob'
+import Axios from 'axios'
+&nbsp;
+import update from 'immutability-helper'
+import { AudioRecorder, AudioUtils } from 'react-native-audio'
+&nbsp;
+class Record extends Component {
+&nbsp;
+    constructor(props) {
+        super(props)
+        this.state = {
+            audioPath: null,
+            audioTag: null,
+            audioProfile: Config.audioProfile,
+            //ToDo: Abstract to function generating valid URI
+            uploadURI:`${Config.server.host}:${Config.server.port}/upload`,
+            permissions: {
+                mic: null
+            },
+            status: {
+                currentTime: 0.0,
+                recording: null
+            }
+        }
+&nbsp;
+        this.prepareRecordingPath = this.prepareRecordingPath.bind(this)
+        this._checkPermissions = this._checkPermissions.bind(this)
+        this._record = this._record.bind(this)
+        this._stop = this._stop.bind(this)
+        this._finishRecording = this._finishRecording.bind(this)
+        this._upload = this._upload.bind(this)
+&nbsp;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>mponentDidMount() {
+<span class="cstat-no" title="statement not covered" >        this._checkPermissions().then(<span class="fstat-no" title="function not covered" >ha</span>sPermission =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (hasPermission)</span>
+<span class="cstat-no" title="statement not covered" >                this.setState({ permissions: update(this.state.permissions, { mic: { $set: true } }) })</span>
+&nbsp;
+            else
+<span class="cstat-no" title="statement not covered" >                return</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            AudioRecorder.onProgress = <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.setState({ status: update(this.state.status, { currentTime: { $set: Math.floor(data.currentTime) } }) })</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            AudioRecorder.onFinished = <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (Platform.OS === 'ios')</span>
+<span class="cstat-no" title="statement not covered" >                    _finishRecording()</span>
+            }
+        })
+    }
+&nbsp;
+    prepareRecordingPath() {
+        try {
+            AudioRecorder.prepareRecordingAtPath(this.state.audioPath, this.state.audioProfile)
+        } catch (err) {
+<span class="cstat-no" title="statement not covered" >            console.error(err)</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _c</span>heckPermissions() {
+<span class="cstat-no" title="statement not covered" >        if (Platform.OS !== 'android')</span>
+<span class="cstat-no" title="statement not covered" >            return Promise.resolve(true)</span>
+&nbsp;
+        const rationale = <span class="cstat-no" title="statement not covered" >{</span>
+            title: 'Microphone Permission',
+            message: 'acePM needs access to your microphone to identify songs'
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, rationale)</span>
+            .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                console.log('Permission result:', result)</span>
+<span class="cstat-no" title="statement not covered" >                return (result === true || result === PermissionsAndroid.RESULTS.GRANTED)</span>
+            })
+    }
+&nbsp;
+    async _record() {
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.state.status.recording) {
+<span class="cstat-no" title="statement not covered" >            console.warn('Already recording')</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+        }
+&nbsp;
+        if (!this.state.permissions.mic) {
+            console.warn('Cannot record : Permission not granted')
+            return
+        }
+&nbsp;
+        await this.setState({
+            audioPath: update(this.state.audioPath, { $set: `${AudioUtils.DocumentDirectoryPath}/${new Date().getTime()}.${this.state.audioProfile.AudioEncoding}` })
+        })
+&nbsp;
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.state.status.recording){
+            this.prepareRecordingPath(this.state.audioPath)
+            await this.setState({ 
+                status: update(this.state.status, { recording: { $set: true } }),
+            })
+        }
+&nbsp;
+        try {
+            const filePath = await AudioRecorder.startRecording()
+        }
+        catch (err) {
+<span class="cstat-no" title="statement not covered" >            console.error(err)</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync _stop() {
+<span class="cstat-no" title="statement not covered" >        if (!this.state.status.recording) {</span>
+<span class="cstat-no" title="statement not covered" >            console.warn('Not recording, cannot stop')</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.setState({ status: update(this.state.status, { recording: { $set: false } }) })</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        try {</span>
+            const filePath = <span class="cstat-no" title="statement not covered" >await AudioRecorder.stopRecording()</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (Platform.OS === 'android')</span>
+<span class="cstat-no" title="statement not covered" >                this._finishRecording(true, filePath)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return filePath</span>
+&nbsp;
+        } catch (err) {
+<span class="cstat-no" title="statement not covered" >            console.error(err)</span>
+        }
+    }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync _upload() {
+<span class="cstat-no" title="statement not covered" >        console.log('Uploading File')</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(!this.state.audioPath){</span>
+<span class="cstat-no" title="statement not covered" >            console.error('Cannot find audio recording')</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+        }
+            
+&nbsp;
+        let file = <span class="cstat-no" title="statement not covered" >{</span>
+            uri:'file://'+this.state.audioPath,
+            type:'audio/aac',
+            name:this.state.audioPath.split('/').slice(-1)[0]
+        }
+&nbsp;
+        let body = <span class="cstat-no" title="statement not covered" >new FormData()</span>
+<span class="cstat-no" title="statement not covered" >        body.append('file', file)</span>
+        //ToDo: Validate Tag isn't emtpy and valid folder struc name
+<span class="cstat-no" title="statement not covered" >        body.append('tag', this.state.audioTag)</span>
+&nbsp;
+        let call = <span class="cstat-no" title="statement not covered" >await Axios.post(this.state.uploadURI,body)</span>
+<span class="cstat-no" title="statement not covered" >        if(Platform.OS==='android')</span>
+<span class="cstat-no" title="statement not covered" >            call.status===200 </span>
+                ? ToastAndroid.show('Sucessfully Uploaded '+this.state.audioTag, ToastAndroid.SHORT) 
+                : ToastAndroid.show('Unsucessfully Uploaded '+this.state.audioTag, ToastAndroid.SHORT)
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _f</span>inishRecording(succeed, filePath) {
+<span class="cstat-no" title="statement not covered" >        console.log(`Finished recording : Duration - ${this.state.status.currentTime}s at ${filePath}`)</span>
+    }
+&nbsp;
+    render() {
+&nbsp;
+        const { status } = this.state
+&nbsp;
+        return (
+            &lt;View&gt;
+                &lt;Button
+                    onPress={!status.recording ? this._record : this._stop}
+                    title={!status.recording ? consts.UI.RECORD_BUTTON.START : consts.UI.RECORD_BUTTON.STOP}
+                    color="#841584"
+                    accessibilityLabel="Start Recording"
+                    id={consts.UI.RECORD_BUTTON.ID}
+                /&gt;
+                &lt;Text&gt;{status.currentTime}s recorded&lt;/Text&gt;
+                {
+                    (!status.recording &amp;&amp; status.currentTime !== 0)
+                        ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >                            &lt;View&gt;</span>
+                                &lt;Button 
+                                    onPress={this._upload} title='Upload to Server' 
+                                /&gt;
+                                &lt;TextInput 
+                                    onChangeText={<span class="fstat-no" title="function not covered" >te</span>xt =&gt; <span class="cstat-no" title="statement not covered" >this.setState({audioTag:text})}</span>
+                                    placeholder='Enter a tag'
+                                /&gt;
+                            &lt;/View&gt;
+                        )
+                        : null
+                }
+            &lt;/View&gt;
+        )
+    }
+&nbsp;
+}
+&nbsp;
+export default Record</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 04 2017 02:07:51 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for client/index.android.js</title>
+    <title>Code coverage report for client/js/util/tests/testutil.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">client</a> index.android.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">client/js/util/tests</a> testutil.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>11/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>5/5</span>
       </div>
     </div>
   </div>
@@ -67,8 +67,7 @@
 22
 23
 24
-25
-26</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+25</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -78,47 +77,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react'
-import { AppRegistry } from 'react-native'
-import { Provider } from 'react-redux'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">/*
+    - Various test utilities for Enzyme / Jest
+    - Enzyme does not support alpha versions of React
+    - Currently React Native 45+ uses React 16.X.X alpha, 
+        hence the need for these helper functions
+    - https://mcculloughwebservices.com/2017/06/24/react-native-45-errors-jest/
+*/
 &nbsp;
-import store from './js/store/store'
-import Main from './js/containers/Main/Main'
+import consts from '../consts'
 &nbsp;
-export default class acePMClient extends Component {
+/* Return state of Enzyme shallow wrapper */
+const _state = wrapper =&gt; wrapper.renderer._instance.state
 &nbsp;
-  constructor() {
-    super()
-    this.state = {}
-  }
+/* Set state of Enzyme shallow wrapper */
+const _setState = (wrapper, update) =&gt; wrapper.renderer._instance.state = update
 &nbsp;
-  render() {
-    return (
-      &lt;Provider store={store}&gt;
-        &lt;Main/&gt;
-      &lt;/Provider&gt;
-    )
-  }
+const _instance = (wrapper) =&gt; wrapper.renderer._instance
 &nbsp;
-}
+/* 
+    - Utilty to force a sync timeout using ES6 await
+    - Useful for UI testing since simulating presses will not return a promise/callback
+ */
+const _wait = (ms) =&gt; new Promise(resolve =&gt; setTimeout(()=&gt;resolve(),ms ? ms : consts.WAIT_TIME))
 &nbsp;
-AppRegistry.registerComponent('acePMClient', <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >acePMClient)</span>;
-&nbsp;</pre></td></tr>
+module.exports = {_state,_setState,_wait,_instance}</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
@@ -127,7 +124,7 @@ AppRegistry.registerComponent('acePMClient', <span class="fstat-no" title="funct
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 04 2017 02:07:51 GMT-0700 (PDT)
 </div>
 </div>
-<script src="../prettify.js"></script>
+<script src="../../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -135,6 +132,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../sorter.js"></script>
+<script src="../../../../sorter.js"></script>
 </body>
 </html>
