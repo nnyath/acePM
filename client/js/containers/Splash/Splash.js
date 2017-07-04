@@ -24,6 +24,7 @@ export default class Splash extends Component {
     super()
     this.state = {
       info:'Loading',
+      timeout: 1000,
       ellipses : {
         rate : 500,
         handler : null,
@@ -33,44 +34,64 @@ export default class Splash extends Component {
 
     this.startEllipses = this.startEllipses.bind(this)
     this.stopEllipses = this.stopEllipses.bind(this)
-
     this.simulateLoading = this.simulateLoading.bind(this)
+    this.iterateMsg = this.iterateMsg.bind(this)
   }
 
   componentDidMount(){
-      this.simulateLoading(3)
+      this.simulateLoading(consts.UI.LOADING_MESSAGES, 10, this.state.timeout)
   }
 
-  async simulateLoading(displayCount){
-    /* Pure recursive helper function to wait and iterate through loading messages*/
-    iterateMsg = async (msgs, count) => {
-      if(count<=0)
-        return
+  async simulateLoading(loadingMsgs,displayCount, timeout){
+        
+    this.startEllipses()
 
-      await _wait(5000)
-      const randInd = Math.floor(Math.random()*msgs.length)
-      await this.setState(update(this.state, {info:{$set:msgs[randInd]}}))
-      await iterateMsg(update(msgs,{$splice:[[randInd,1]]}),count-1)
+    try{
+      await this.iterateMsg(loadingMsgs,displayCount, timeout)
+    }catch(err){
+      console.warn(err)
     }
     
-    this.startEllipses()
-    await iterateMsg(consts.UI.LOADING_MESSAGES,displayCount)
     this.stopEllipses()
-    
     this.props.dispatch(initLoad())
   }
 
   startEllipses(){
-    this.setState(
+    return this.setState(
       update(this.state, { ellipses: { handler: { $set: setInterval(()=>{
-        this.setState(update(this.state, {ellipses:{display:{$set: this.state.ellipses.display.length > 2 ? '' : this.state.ellipses.display+'.' }}}))
+        this.setState(update(this.state, {ellipses:{display:{$set: this.state.ellipses.display.length > 2 ? '.' : this.state.ellipses.display+'.' }}}))
       },this.state.ellipses.rate) } } })
     )
   }
 
-  stopEllipses(){
+  async stopEllipses(){
     clearInterval(this.state.ellipses.handler)
-    this.setState(update(this.state, { ellipses: { display: { $set: '' }, handler: { $set: null } } }))
+    return await this.setState(update(this.state, { ellipses: { display: { $set: '' }, handler: { $set: null } } }))
+  }
+
+  /* Unpure (setState side-effect) recursive helper function to wait and iterate through loading messages*/
+  iterateMsg = async (msgs, count, timeout) => {
+    
+    if(!Array.isArray(msgs))
+      throw new Error('Invalid loading messages')
+    
+    if(count<=0)
+      return msgs === [] ? [] : msgs
+    
+      
+    if(count>msgs.length){
+      console.warn('Cannot display more messages than what exists, defaulting to messages.length')
+      return await this.iterateMsg(msgs,msgs.length,timeout)
+    }
+
+    if(msgs.length==0){
+      throw new Error('Invalid loading messages')
+    }
+
+    await _wait(timeout)
+    const randInd = Math.floor(Math.random()*msgs.length)
+    await this.setState(update(this.state, {info:{$set:msgs[randInd]}}))
+    return await this.iterateMsg(update(msgs,{$splice:[[randInd,1]]}),count-1,timeout)
   }
 
   render() {

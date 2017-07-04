@@ -14,10 +14,12 @@ const _state = wrapper => wrapper.renderer._instance.state
 /* Set state of Enzyme shallow wrapper */
 const _setState = (wrapper, update) => wrapper.renderer._instance.state = update
 
+const _instance = (wrapper) => wrapper.renderer._instance
+
 /* 
     - Utilty to force a sync timeout using ES6 await
     - Useful for UI testing since simulating presses will not return a promise/callback
  */
 const _wait = (ms) => new Promise(resolve => setTimeout(()=>resolve(),ms ? ms : consts.WAIT_TIME))
 
-module.exports = {_state,_setState,_wait}
+module.exports = {_state,_setState,_wait,_instance}

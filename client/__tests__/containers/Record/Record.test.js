@@ -13,7 +13,7 @@ jest.mock('react-native-fetch-blob', ()=>mockRNFB)
 import {AudioRecorder} from 'react-native-audio'
 import Record from '../../../js/containers/Record/Record'
 
-
+/* TODO: Move and refactor tests to match Splash's structure */
 
 it('renders correctly', () => {
     const wrapper = shallow(<Record/>)

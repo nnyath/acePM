@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`init renders correctly 1`] = `
+exports[`initial render renders correctly 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -142,6 +142,7 @@ ShallowWrapper {
           "subscribe": [Function],
         },
       },
+      "iterateMsg": [Function],
       "props": Object {
         "dispatch": [Function],
         "init": false,
@@ -156,6 +157,7 @@ ShallowWrapper {
           "rate": 500,
         },
         "info": "Loading",
+        "timeout": 1000,
       },
       "stopEllipses": [Function],
       "updater": Updater {
@@ -222,5 +224,17 @@ ShallowWrapper {
     dispatch={[Function]}
     init={false}
 />,
+}
+`;
+
+exports[`redux reducers should set init true on undefined 1`] = `
+Object {
+  "init": true,
+}
+`;
+
+exports[`redux reducers should set init:true on undefined 1`] = `
+Object {
+  "init": true,
 }
 `;
